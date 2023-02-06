@@ -5,21 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Login</title>
 </head>
 <body>
-    <main>
-        <img src="" alt="">
-        <div>
-            <form method="post">
-                <h1>Login</h1>
+    <main id="main">
+        <img src="" alt="" id="sky">
+        <section id="login">
+            <form id="form">
+                <h1 id="login_title">Login</h1>
                 <label>Email</label>
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <label>Senha</label>
-                <input type="password" name="senha" id="senha" placeholder="senha" required>
-                <input type="submit" value="Login">
+                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                <span class="material-symbols-outlined vb" id="vb_on">visibility</span>
+                <span class="material-symbols-outlined vb" id="vb_off">visibility_off</span>
+                <span id="span_btn">
+                    <input type="submit" value="Login" id="submit">
+                </span>
+                
             </form>
-        </div>
+        </section>
+        <section id="done">
+            <h1 id="done_title">Concluido</h1>
+        </section>
     </main>
+    <div id="load">
+        <span id="load_circle"></span>
+    </div>
+
+    <script>
+        const vb_on = document.getElementById('vb_on')
+        const vb_off = document.getElementById('vb_off')
+        const senha = document.getElementById('senha')
+        const main = document.getElementById('main')
+        senha.addEventListener('click', visible => {
+            vb_on.style.zIndex = '1'
+        })
+        
+        vb_on.addEventListener('click', passon => {
+            senha.type = 'text'
+            vb_on.style.zIndex = '-1'
+            vb_off.style.zIndex = '1'
+        })
+        vb_off.addEventListener('click', passof => {
+            senha.type = 'password'
+            vb_off.style.zIndex = '-1'
+            vb_on.style.zIndex = '1'
+        })
+    </script>
+    <script>
+        const form = document.getElementById('form')
+        const btn = document.getElementById('submit')
+        const load = document.getElementById('load')
+        const done = document.getElementById('done')
+        const circle = document.getElementById('load_circle')
+        var time
+
+        form.addEventListener('submit', loading => {
+            loading.preventDefault()
+            load.style.zIndex = '10'
+            load.style.transition = '1s'
+            load.style.backdropFilter = 'blur(5px)'
+            circle.style.display = 'block'
+            time++
+            if(time > 0){
+                time++
+            }
+        })
+        load.style.zIndex = '-10'
+                circle.style.display = 'none
+    </script>
 </body>
 </html>

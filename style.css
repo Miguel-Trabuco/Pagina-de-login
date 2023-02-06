@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+main{
+    background-color: white;
+    height: 100vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login_title{
+    font-family: 'Lilita One', "cursive";
+    font-size: 10vh;
+    color: #F2ACC6;
+    margin: 4vh 0 5vh 0;
+}
+
+label{
+    font-family: 'Lilita One', "cursive";
+    font-size: 4vh;
+    color: #F2ACC6;
+    align-self: flex-start;
+    margin: 5vh 0 1vh 7vw;
+}
+
+input{
+    border: none;
+    background-color: #F9CDE6;
+    font-size: 4vh;
+    padding: 10px;
+    width: 80%;
+    border-radius: 20px;
+}
+
+input::placeholder{
+    color: rgba(161, 160, 160, 0.65);
+}
+
+.material-symbols-outlined{
+    position: absolute;
+    top: 50.8vh;
+    right: 14vw;
+    color: rgba(161, 160, 160, 0.65);
+    z-index: -1;
+}
+
+#span_btn{
+    margin-top: 15vh;
+}
+
+#submit{
+    background-color: transparent;
+    border: 4px solid #F2ACC6;
+    font-size: 4vh;
+    font-family: 'Lilita One', "cursive";
+    color: #F2ACC6;
+    padding: 0px;
+    width: 70vw;
+    height: 10vh; 
+}
+
+#load{
+    backdrop-filter: blur(0px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -5;
+}
+
+#load_circle{
+    background-color: transparent;
+    display: none;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 20px solid black;
+    border-top-color: red;
+    animation: loading 1s ease-in-out infinite;
+}
+
+#sky{
+    display: none;
+}
+
+#done{
+    z-index: -10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
