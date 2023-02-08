@@ -31,7 +31,7 @@
         </section>
     </main>
     <div id="load">
-        <span id="load_circle"></span>
+            <div id="load_circle"></div>
     </div>
 
     <script>
@@ -56,25 +56,14 @@
     </script>
     <script>
         const form = document.getElementById('form')
-        const btn = document.getElementById('submit')
         const load = document.getElementById('load')
         const done = document.getElementById('done')
-        const circle = document.getElementById('load_circle')
-        var time
 
         form.addEventListener('submit', loading => {
             loading.preventDefault()
-            load.style.zIndex = '10'
-            load.style.transition = '1s'
-            load.style.backdropFilter = 'blur(5px)'
-            circle.style.display = 'block'
-            time++
-            if(time > 0){
-                time++
-            }
+            load.style.animation = 'load 4s'
+            done.style.zIndex = '1'
         })
-        load.style.zIndex = '-10'
-                circle.style.display = 'none
     </script>
 </body>
 </html>
