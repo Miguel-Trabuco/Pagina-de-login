@@ -10,7 +10,7 @@
 </head>
 <body>
     <main id="main">
-        <img src="" alt="" id="sky">
+        <div id="sky"></div>
         <section id="login">
             <form id="form">
                 <h1 id="login_title">Login</h1>
@@ -27,11 +27,12 @@
             </form>
         </section>
         <section id="done">
+            <span class="material-symbols-outlined" id="check">check</span>
             <h1 id="done_title">Concluido</h1>
         </section>
     </main>
     <div id="load">
-            <div id="load_circle"></div>
+        <div id="load_circle"></div>
     </div>
 
     <script>
@@ -62,6 +63,7 @@
         form.addEventListener('submit', loading => {
             loading.preventDefault()
             load.style.animation = 'load 4s'
+            done.style.animation = 'done 4s'
             done.style.zIndex = '1'
         })
     </script>
